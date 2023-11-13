@@ -5,6 +5,7 @@ import figlet from "figlet";
 import PromptGen from "./functions/promptgen.js";
 import Render from "./functions/render.js";
 import Horde from "./functions/horde.js";
+import AOne from "./functions/aone.js";
 import API from "./functions/api.js";
 
 (async () => {
@@ -33,6 +34,7 @@ import API from "./functions/api.js";
   const promptGen = new PromptGen();
   const render = new Render();
   const horde = new Horde("https://stablehorde.net", "0000000000");
+  const aone = new AOne();
 
   if (options.api) {
     console.clear();
@@ -139,7 +141,8 @@ import API from "./functions/api.js";
               continue;
             }
             const prompt = promptGen.last[i - 1];
-            const response = await horde.generate(prompt);
+            // const response = await horde.generate(prompt);
+            const response = await aone.generate(prompt);
             console.log(response);
           } else {
             // render all
@@ -150,7 +153,8 @@ import API from "./functions/api.js";
             }
             // const prompt = promptGen.last.join("\n");
             for (let prompt of promptGen.last) {
-              const response = await horde.generate(prompt);
+              // const response = await horde.generate(prompt);
+              const response = await aone.generate(prompt);
               console.log(response);
             }
           }
