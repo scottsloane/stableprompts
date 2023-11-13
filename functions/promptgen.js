@@ -21,7 +21,6 @@ Write 5 Stable diffusion prompts using the above formula with the subject being 
     this.last = response.data.response
       .split("\n")
       .filter((x) => x.trim() !== "");
-    console.log(this.last);
     return response.data.response;
   }
 

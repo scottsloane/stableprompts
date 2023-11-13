@@ -15,7 +15,7 @@ Currently StablePrompts requires the following:
 ## Installation
 
 1. Clone this repo with `git clone https://github.com/scottsloane/stableprompts.git`
-2. Install packages `yarn i`
+2. Install packages `yarn install`
 3. Run with `node . (options)`
 
 ## Usage

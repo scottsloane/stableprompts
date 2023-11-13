@@ -5,6 +5,7 @@ import figlet from "figlet";
 import PromptGen from "./functions/promptgen.js";
 import Render from "./functions/render.js";
 import Horde from "./functions/horde.js";
+import API from "./functions/api.js";
 
 (async () => {
   let ren = false;
@@ -40,6 +41,10 @@ import Horde from "./functions/horde.js";
     console.log(
       "Welcome to the StablePrompts a text2image prompt generator!".green
     );
+
+    const api = new API();
+    await api.start();
+
     console.log("API mode activated".yellow);
     console.log("Type '.exit' to exit the program.".grey);
     while (true) {
